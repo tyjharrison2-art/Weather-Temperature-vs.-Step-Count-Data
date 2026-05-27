@@ -1,0 +1,308 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Steps vs Weather | Tyler Harrison</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, serif;
+      background: #fafaf8;
+      color: #1a1a1a;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 50px 24px 80px;
+    }
+
+ 
+    .site-header {
+      border-bottom: 3px solid #1a1a1a;
+      padding-bottom: 16px;
+      margin-bottom: 50px;
+    }
+
+    .site-header .name {
+      font-family: Arial, sans-serif;
+      font-size: 0.75em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    h1 {
+      font-size: 2.6em;
+      line-height: 1.15;
+      margin: 10px 0 8px;
+      color: #1a1a1a;
+    }
+
+    .deck {
+      font-size: 1.1em;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    
+
+   
+    p {
+      font-size: 1.05em;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+
+    h2 {
+      font-size: 1.5em;
+      margin: 48px 0 12px;
+      color: #1a1a1a;
+      border-left: 4px solid #e74c3c;
+      padding-left: 12px;
+    }
+
+    h2.blue  { border-left-color: #2980b9; }
+    h2.green { border-left-color: #27ae60; }
+    h2.orange { border-left-color: #e67e22; }
+    h2.purple { border-left-color: #8e44ad; }
+
+    
+    .badge {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 0.78em;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 3px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .badge-blue   { background: #2980b9; }
+    .badge-green  { background: #27ae60; }
+    .badge-red    { background: #c0392b; }
+
+
+    .img-pair {
+      display: flex;
+      gap: 10px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .img-pair img {
+      width: calc(50% - 5px);
+      border: 1px solid #ddd;
+      display: block;
+    }
+
+    .img-full img {
+      width: 100%;
+      border: 1px solid #ddd;
+      display: block;
+      margin: 16px 0;
+    }
+
+
+    .callout {
+      border-left: 4px solid #2980b9;
+      background: #f0f6fc;
+      padding: 14px 18px;
+      margin: 22px 0;
+      font-size: 0.98em;
+      line-height: 1.7;
+    }
+
+    .callout.yellow {
+      border-left-color: #f39c12;
+      background: #fffbf0;
+    }
+
+    .callout.green {
+      border-left-color: #27ae60;
+      background: #f0faf3;
+    }
+
+    .callout.red {
+      border-left-color: #c0392b;
+      background: #fdf3f2;
+    }
+
+   
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-family: Arial, sans-serif;
+      font-size: 0.9em;
+    }
+
+    th {
+      background: #1a1a1a;
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    tr:nth-child(even) td { background: #f5f5f5; }
+
+   
+    .divider {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 48px 0;
+    }
+
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 2px solid #1a1a1a;
+      font-family: Arial, sans-serif;
+      font-size: 0.75em;
+      color: #aaa;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-header">
+    <div class="name">Tyler Harrison: Data Storytelling Project</div>
+    <h1><br>Does Temperature Really Affect How Much A Student Walks?</h1>
+    <p class="deck">I collected three years of Apple Health daily steps data alongside temperature data, convinced that warmer weather meant more walking.</p>
+  </div>
+
+  <p>The assumption is intuitive: warm days brought me outside, cold days keep me in. So when I had three years of my own step data sitting in my iPhone Health app, I decided to actually test it against real temperature records.</p>
+
+  <p>I focused on April each year, the same month, same general context, different weather. I graphed daily steps against average, minimum, and maximum daily temperature for April 2024, 2025, and 2026.</p>
+
+  <div class="callout">
+    <strong>What I tracked:</strong> Daily step count (iPhone Health) vs. daily temperature — average, minimum, and maximum — across all 30 days of April for three consecutive years. Precipitation was also collected, but the values were too small to produce any meaningful signal, so it was excluded.
+  </div>
+
+  <hr class="divider">
+
+
+  <span class="badge badge-blue">April 2024</span>
+  <h2 class="blue">The Baseline</h2>
+
+  <p>April 2024 started cold, with low 40s°F in the first week, and warmed up to the low 70s by the month's end. My steps that month were all over the place. Some days I barely hit 2,000. One day, I hit nearly 15,000. Looking at the graphs, there's a loose upward trend when temperatures rise, but it's weak. The lines cross constantly.</p>
+
+  <p>If temperature were the main driver, you'd expect the step line to roughly follow the temperature line. Yet still, there is an evident correlation in the overall shapes of each graph</p>
+
+  <div class="img-pair">
+    <img src="avg_steps_vs_temp_2024.png" alt="2024 Steps vs Average Temperature">
+    <img src="min_steps_vs_temp_2024.png" alt="2024 Steps vs Minimum Temperature">
+  </div>
+  <div class="img-full">
+    <img src="max_steps_vs_temp_2024.png" alt="2024 Steps vs Maximum Temperature">
+  </div>
+
+  <hr class="divider">
+
+  
+  <span class="badge badge-green">April 2025</span>
+  <h2 class="green">Something Changed</h2>
+
+  <p>April 2025 is immediately different. Steps jumped, regularly hitting 12,000 to 17,000 per day, with fewer low-count days than in 2024.</p>
+
+  <p>Here's the problem with crediting weather: the temperatures in 2025 were almost identical to those in 2024. Same range, same general pattern, similar highs and lows. If temperature explained the step increase, it would look different.</p>
+
+  <div class="callout yellow">
+    <strong>Worth noting:</strong> April 2025 had the highest average daily steps of any of the three years, despite having almost the same temperature range as 2024. Temperature alone cannot explain a jump this large, despite playing a noticeable role.
+  </div>
+
+  <div class="img-pair">
+    <img src="avg_steps_vs_temp_2025.png" alt="2025 Steps vs Average Temperature">
+    <img src="min_steps_vs_temp_2025.png" alt="2025 Steps vs Minimum Temperature">
+  </div>
+  <div class="img-full">
+    <img src="max_steps_vs_temp_2025.png" alt="2025 Steps vs Maximum Temperature">
+  </div>
+
+  <hr class="divider">
+
+
+  <span class="badge badge-red">April 2026</span>
+  <h2>The Warmest Year And Fewer Steps</h2>
+
+  <p>April 2026 was the warmest April of the three. Temperatures regularly reached the high 70s and briefly touched 90°F, a range well above 2024 or 2025. If the weather hypothesis were correct, this would be the most active April in the dataset.</p>
+
+  <p>However, it wasn't. Steps fell back toward 2024 levels. Warmer temperatures did not produce more walking. At this point, temperature as the primary variable is effectively ruled out.</p>
+
+  <div class="callout red">
+    <strong>The contradiction:</strong> 2026 was the warmest year and had fewer steps than 2025. That's the opposite of what the weather hypothesis predicts.
+  </div>
+
+  <div class="img-pair">
+    <img src="avg_steps_vs_temp_2026.png" alt="2026 Steps vs Average Temperature">
+    <img src="min_steps_vs_temp_2026.png" alt="2026 Steps vs Minimum Temperature">
+  </div>
+  <div class="img-full">
+    <img src="max_steps_vs_temp_2026.png" alt="2026 Steps vs Maximum Temperature">
+  </div>
+
+  <hr class="divider">
+
+ 
+  <h2 class="orange">The Real Variable</h2>
+
+  <p>When I looked at what actually changed between the three years, the answer was not exclusive to the weather. My school changed its phone policy across all three years, and the step counts track that change almost perfectly.</p>
+
+  <table>
+    <tbody><tr>
+      <th>Year</th>
+      <th>Phone Policy at School</th>
+      <th>Avg Steps (Approx.)</th>
+    </tr>
+    <tr>
+      <td><strong>2024</strong></td>
+      <td>Phone allowed all day</td>
+      <td>~6,500</td>
+    </tr>
+    <tr>
+      <td><strong>2025</strong></td>
+      <td>Phone allowed half the school day</td>
+      <td>~10,500</td>
+    </tr>
+    <tr>
+      <td><strong>2026</strong></td>
+      <td>Phone banned the entire school day</td>
+      <td>~5,500</td>
+    </tr>
+  </tbody></table>
+
+  <p>The pattern that emerges is not what I expected going in. The partial restriction in 2025 coincided with the highest step counts, possibly because having the phone for part of the day still kept overall screen time lower than 2024, while the full ban in 2026 may have changed activity patterns in ways the step data doesn't fully capture.</p>
+
+  <div class="callout yellow">
+    <strong>A note on causation:</strong> This is observational data. The phone policy change and step counts coincide across three years, but that's correlation — not proof that one caused the other. Other factors (schedule changes, extracurriculars, habits) could also be at play.
+  </div>
+
+  <hr class="divider">
+
+  <!-- CONCLUSION -->
+  <h2 class="purple">What This Project Actually Found</h2>
+
+  <p>There is a small, real relationship between temperature and daily steps — warmer days do tend to produce slightly more activity. But the effect is far weaker than popular intuition suggests, and it was completely overshadowed by a variable I wasn't originally measuring.</p>
+
+  <p>The more honest conclusion from this data is that behavioral context — specifically, how much time I spent on a phone during the day — appears to be a stronger predictor of daily step count than outdoor temperature, at least within the April temperature ranges observed here.</p>
+
+  <div class="callout green">
+    <strong>The takeaway:</strong> I started this project trying to prove that weather drives physical activity. The data pushed back. The biggest factor wasn't the temperature outside — it was what I was doing with my hands indoors.
+  </div>
+
+  <p>That's what makes data worth looking at. The answer you expect is rarely the most interesting one.</p>
+
+  <div class="footer">
+    Tyler Harrison &nbsp;·&nbsp; Data Storytelling Project &nbsp;·&nbsp; April 2024–2026 &nbsp;·&nbsp; Step data: iPhone Health App &nbsp;·&nbsp; Graphs: Python (matplotlib)
+  </div>
+
+
+
+</body></html>
